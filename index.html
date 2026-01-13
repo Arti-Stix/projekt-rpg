@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROJEKT:RPG</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#161a2e" />
+  </head>
+  <body>
+    <div id="welcomeOverlay">
+      <div class="welcome-text">Welcome, Master!</div>
+    </div>
+
+    <header>
+      <h1>PROJEKT:RPG</h1>
+      <p>Discipline, but make it a game.</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Player Status</h2>
+        <p>Rank: <span id="level">Unranked</span></p>
+        <p>XP: <span id="xp">0</span></p>
+        <div class="xp-bar">
+          <div id="xpFill"></div>
+        </div>
+        <p id="xpText"></p>
+        <p id="dailyXp">XP gained today: 0</p>
+        <p id="streakInfo"></p>
+        <p id="rankTrialText" style="display: none"></p>
+        <button id="completeTrialBtn" style="display: none">
+          Complete Trial
+        </button>
+      </section>
+
+      <section>
+        <h2>Daily XP History</h2>
+        <div id="xpHistory"></div>
+      </section>
+
+      <section>
+        <h2>Main Quests</h2>
+        <div id="mainQuests"></div>
+      </section>
+
+      <section>
+        <h2>Language Timeline</h2>
+        <div id="timeline"></div>
+      </section>
+
+      <section>
+        <h2>Daily Quests</h2>
+        <div id="daily"></div>
+      </section>
+
+      <section>
+        <h2>Side Quests</h2>
+        <div id="side"></div>
+      </section>
+
+      <section>
+        <h2>Weekly Boss</h2>
+        <div id="dungeon"></div>
+      </section>
+
+      <section>
+        <h2>Boss History</h2>
+        <div id="bossHistory"></div>
+      </section>
+      <button
+        onclick="localStorage.removeItem('projektRPG'); location.reload();"
+      >
+        🔄 Reset Save (DEV)
+      </button>
+    </main>
+
+    <script type="module" src="app.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./sw.js");
+      }
+    </script>
+  </body>
+</html>
