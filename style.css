@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #0f1220;
+  color: #eaeaf0;
+}
+
+header {
+  padding: 1.5rem;
+  background: #161a2e;
+  text-align: center;
+}
+
+main {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+section {
+  background: #1c2140;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+button {
+  background: #5b6cff;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+button:disabled {
+  background: #444;
+  cursor: not-allowed;
+}
+
+.xp-bar {
+  width: 100%;
+  height: 14px;
+  background: #2a2f55;
+  border-radius: 7px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+#xpFill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #5b6cff, #8f9bff);
+  transition: width 0.3s ease;
+}
+
+#dungeon ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.2rem;
+}
+
+#dungeon label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* ───────────────────────────────────── */
+/* WELCOME OVERLAY */
+/* ───────────────────────────────────── */
+
+#welcomeOverlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #1c2140, #0f1220);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+#welcomeOverlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.welcome-text {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #eaeaf0;
+  animation: welcomeFloat 1.6s ease forwards;
+}
+
+/* Subtle float-in */
+@keyframes welcomeFloat {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
